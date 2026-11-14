@@ -49,6 +49,7 @@
         <androidx.appcompat.widget.SwitchCompat
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,6 +75,7 @@
             android:focusable="true"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/share"  />
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -99,6 +101,7 @@
             android:focusable="true"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/support"  />
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -124,6 +127,6 @@
             android:focusable="true"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/agreement"  />
-    </LinearLayout>
 
+    </LinearLayout>
 </LinearLayout>
