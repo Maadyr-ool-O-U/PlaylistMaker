@@ -15,6 +15,10 @@ import android.view.inputmethod.InputMethodManager
 import android.view.View
 
 class SearchActivity : AppCompatActivity() {
+
+    private var searchText: String = ""
+    private lateinit var searchEditText: EditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -26,7 +30,7 @@ class SearchActivity : AppCompatActivity() {
         }
 
         val ivArrowBack = findViewById<ImageView>(R.id.iv_arrow_back)
-        val searchEditText = findViewById<EditText>(R.id.searchEditText)
+        searchEditText = findViewById(R.id.searchEditText)
         val clearIcon = findViewById<ImageView>(R.id.clearIcon)
 
         ivArrowBack.setOnClickListener {
@@ -47,12 +51,12 @@ class SearchActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                searchText = s?.toString() ?: ""
                 clearIcon.visibility = if (s.isNullOrEmpty()) {
                     View.GONE
                 } else {
                     View.VISIBLE
                 }
-                // Заглушка для будущей логики поиска
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -60,5 +64,20 @@ class SearchActivity : AppCompatActivity() {
             }
         }
         searchEditText.addTextChangedListener(simpleTextWatcher)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(SEARCH_TEXT_KEY, searchText)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        searchText = savedInstanceState.getString(SEARCH_TEXT_KEY, "")
+        searchEditText.setText(searchText)
+    }
+
+    companion object {
+        private const val SEARCH_TEXT_KEY = "SEARCH_TEXT"
     }
 }
