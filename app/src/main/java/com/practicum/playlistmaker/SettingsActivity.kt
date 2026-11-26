@@ -26,8 +26,7 @@ class SettingsActivity: AppCompatActivity() {
         val agreementContainer = findViewById<ImageView>(R.id.agreement_container)
 
         ivArrowBack.setOnClickListener {
-            val displayIntent = Intent(this, MainActivity::class.java)
-            startActivity(displayIntent)
+            finish()
         }
 
         shareContainer.setOnClickListener {

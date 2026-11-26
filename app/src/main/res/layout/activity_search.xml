@@ -42,9 +42,9 @@
             android:paddingEnd="@dimen/edit_text_padding_end"
             android:textSize="@dimen/text_size_body"
             android:textColor="@color/yp_black"
-            android:textColorHint="@color/yp_text_gray"
+            android:textColorHint="?attr/colorOnSurface"
             android:textCursorDrawable="@drawable/cursor_blue"
-            app:drawableTint="@color/yp_text_gray"  />
+            app:drawableTint="?attr/colorOnSurface"  />
 
         <ImageView
             android:id="@+id/clearIcon"
@@ -53,8 +53,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end|center_vertical"
             android:visibility="gone"
+            android:paddingStart="@dimen/clear_icon_padding_end"
             android:paddingEnd="@dimen/clear_icon_padding_end"
-            app:tint="@color/yp_text_gray"  />
+            app:tint="?attr/colorOnSurface"  />
     </FrameLayout>
 
 </LinearLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="?attr/colorSecondary">
+    android:background="?attr/colorSecondary"   >
 
     <LinearLayout
         style="@style/HeaderContainerStyle" >
@@ -30,8 +30,8 @@
             android:id="@+id/theme_switcher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:thumbTint="@color/switch_thumb_color"
-            app:trackTint="@color/switch_track_color" />
+            app:thumbTint="@color/switch_knob_color"
+            app:trackTint="@color/switch_track_color"   />
 
     </LinearLayout>
     <LinearLayout

@@ -17,8 +17,8 @@
         <item name="iconGravity">textStart</item>
         <item name="iconPadding">@dimen/icon_padding_size</item>
         <item name="cornerRadius">@dimen/margin_padding_standard</item>
+        <item name="iconSize">24dp</item>
     </style>
-
     <style name="SettingsItemContainer">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/header_height</item>

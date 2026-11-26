@@ -1,6 +1,5 @@
 package com.practicum.playlistmaker
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageView
@@ -9,10 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.content.Context
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.inputmethod.InputMethodManager
 import android.view.View
+import androidx.core.widget.doOnTextChanged
 
 class SearchActivity : AppCompatActivity() {
 
@@ -34,8 +32,7 @@ class SearchActivity : AppCompatActivity() {
         val clearIcon = findViewById<ImageView>(R.id.clearIcon)
 
         ivArrowBack.setOnClickListener {
-            val displayIntent = Intent(this, MainActivity::class.java)
-            startActivity(displayIntent)
+            finish()
         }
 
         clearIcon.setOnClickListener {
@@ -45,25 +42,14 @@ class SearchActivity : AppCompatActivity() {
             inputMethodManager?.hideSoftInputFromWindow(searchEditText.windowToken, 0)
         }
 
-        val simpleTextWatcher = object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                // Пусто
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                searchText = s?.toString() ?: ""
-                clearIcon.visibility = if (s.isNullOrEmpty()) {
-                    View.GONE
-                } else {
-                    View.VISIBLE
-                }
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-                // Пусто
+        searchEditText.doOnTextChanged { s, _, _, _ ->
+            searchText = s?.toString() ?: ""
+            clearIcon.visibility = if (s.isNullOrEmpty()) {
+                View.GONE
+            } else {
+                View.VISIBLE
             }
         }
-        searchEditText.addTextChangedListener(simpleTextWatcher)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

@@ -2,11 +2,14 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.PlaylistMaker" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/yp_blue</item>
-
         <item name="colorSecondary">@color/yp_white</item>
         <item name="colorOnSecondary">@color/yp_black</item>
         <item name="colorSecondaryVariant">@color/yp_text_gray</item>
         <item name="colorSurfaceVariant">@color/yp_light_gray</item>
+        <item name="colorPrimaryVariant">@color/yp_turquoise</item>
+        <item name="colorTertiary">@color/yp_turquoise_light</item>
+        <item name="colorSurface">@color/yp_light_gray</item>
+        <item name="colorOnSurface">@color/yp_text_gray</item>
     </style>
 
     <style name="Theme.PlaylistMaker" parent="Base.Theme.PlaylistMaker" />
