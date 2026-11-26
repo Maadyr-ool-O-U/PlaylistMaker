@@ -1,10 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/search_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/colorSecondary"
     tools:context=".SearchActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        style="@style/HeaderContainerStyle" >
+
+        <ImageView
+            android:id="@+id/iv_arrow_back"
+            style="@style/HeaderBackButtonStyle"  />
+
+        <TextView
+            android:text="@string/search"
+            style="@style/HeaderTitleStyle"    />
+
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/search_edit_text"
+        android:paddingHorizontal="@dimen/margin_padding_standard"
+        android:paddingVertical="@dimen/icon_padding_size">
+
+        <EditText
+            android:id="@+id/searchEditText"
+            android:background="@drawable/search_background"
+            android:drawableStart="@drawable/ic_search"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_gravity="center_vertical"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:hint="@string/search"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingStart="@dimen/edit_text_padding_start"
+            android:paddingEnd="@dimen/edit_text_padding_end"
+            android:textSize="@dimen/text_size_body"
+            android:textColor="@color/yp_black"
+            android:textColorHint="?attr/colorOnSurface"
+            android:textCursorDrawable="@drawable/cursor_blue"
+            app:drawableTint="?attr/colorOnSurface"  />
+
+        <ImageView
+            android:id="@+id/clearIcon"
+            android:src="@drawable/clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:visibility="gone"
+            android:paddingStart="@dimen/clear_icon_padding_end"
+            android:paddingEnd="@dimen/clear_icon_padding_end"
+            app:tint="?attr/colorOnSurface"  />
+    </FrameLayout>
+
+</LinearLayout>
